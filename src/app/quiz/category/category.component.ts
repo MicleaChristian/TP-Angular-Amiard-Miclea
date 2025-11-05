@@ -8,17 +8,13 @@ import { QuizService } from "../../shared/services/quiz.service";
   styleUrl: './category.component.scss'
 })
 export class CategoryComponent implements OnInit{
-  
+
   quizContent: any[] = this.quizService.quizContent;
 
   constructor(private quizService: QuizService) { }
 
 ngOnInit(): void {
-    this.quizService.getQuizContent();
-  }
-
-  addAnswer(answer: string, questionId: number) {
-    this.quizService.addAnswer(answer, questionId);
+    this.quizService.getQuizCategories();
   }
 
 }
