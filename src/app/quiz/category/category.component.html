@@ -1,4 +1,7 @@
 <div class="category-container">
+  <div class="player-name-container" *ngIf="playerName">
+    <h2 class="player-name">Bienvenue, {{ playerName }}!</h2>
+  </div>
   <div class="search-bar-container">
     <form #searchForm="ngForm" (ngSubmit)="onSearch(searchForm)">
       <div class="search-form-group">
@@ -17,12 +20,14 @@
   </div>
   
   <section class="category_container">
-    <div class="category_card" *ngFor="let content of filteredCategories; let i = index">
-      <h4 class="category_label">{{ content?.name }}</h4>
-    </div>
+    <ng-container *ngFor="let content of filteredCategories; let i = index">
+      <div class="category_card" *ngIf="content?.name">
+        <h4 (click)="goToQuestions(content.id)" class="category_label">{{ content.name }}</h4>
+      </div>
+    </ng-container>
   </section>
   
-  <div *ngIf="filteredCategories.length === 0 && searchModel.searchTerm.trim()" class="no-results">
-    <p>No categories found matching "{{ searchModel.searchTerm }}"</p>
+  <div *ngIf="filteredCategories.length === 0 && currentSearchTerm.trim()" class="no-results">
+    <p>No categories found matching "{{ currentSearchTerm }}"</p>
   </div>
 </div>

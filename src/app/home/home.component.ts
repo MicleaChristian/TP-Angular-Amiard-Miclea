@@ -11,6 +11,7 @@ import { AuthService } from "../auth/auth.service";
 export class HomeComponent implements OnInit {
   playerName = '';
   isPlayerNameConfirmed = false;
+  showCategories = false;
 
   constructor(private router: Router, private authService: AuthService) { }
 
@@ -24,8 +25,14 @@ export class HomeComponent implements OnInit {
     return this.playerName.length < 1;
   }
 
+  startQuiz() {
+    // Show category component using @Input() instead of routing
+    this.showCategories = true;
+  }
+
   navigateToQuiz() {
-    this.router.navigate(['/quiz', this.playerName]);
+    // Alternative: navigate using route (for backward compatibility)
+    this.router.navigate(['/category', this.playerName]);
   }
 
   confirmPseudo() {
