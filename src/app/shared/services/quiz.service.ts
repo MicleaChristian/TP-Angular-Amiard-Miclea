@@ -52,12 +52,14 @@ export class QuizService {
   }
 
     getQuizContent() {
+    this.quizContent = [];
     this.http.get('http://localhost:3000/questions').subscribe((questions: any) => {
       for (const question of questions) {
         this.http.get(`http://localhost:3000/answers?questionId=${question.id}`).subscribe((answers: any) => {
           this.quizContent.push({
               id: question.id,
               question: question.questionLabel,
+              categoryId: question.categoryId,
               answers
           });
         });

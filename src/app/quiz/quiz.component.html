@@ -7,4 +7,7 @@
     <section class="quiz_category">
     <app-question></app-question>
   </section>
+  <section class="quiz_submit" *ngIf="!isQuizFinished">
+    <button class="btn btn--submit" (click)="submitQuiz()">Soumettre</button>
+  </section>
 </section>

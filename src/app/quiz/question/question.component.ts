@@ -9,19 +9,20 @@ import { ActivatedRoute } from '@angular/router';
   standalone: false
 })
 export class QuestionComponent implements OnInit {
-  quizContent: any[] = this.quizService.quizContent;
   categoryId: number = 0;
 
   constructor(private quizService: QuizService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.categoryId = params['categoryId'];
+      this.categoryId = +params['categoryId'] || 0;
+      this.quizService.quizContent = [];
+      this.quizService.getQuizContent();
     });
-    console.log(this.categoryId);
-    this.quizService.getQuizContent();
-    console.log(this.quizContent);
-    this.quizContent = this.quizContent.filter(q => q.categoryId === this.categoryId);
+  }
+
+  get quizContent(): any[] {
+    return this.quizService.quizContent.filter(q => q.categoryId === this.categoryId);
   }
 
   addAnswer(answer: string, questionId: number) {

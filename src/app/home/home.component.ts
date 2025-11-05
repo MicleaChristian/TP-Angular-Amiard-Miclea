@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
-    //Nous verrons plus tard comment gérer cela avec des observables
     this.authService.isUserConnected();
     this.playerName = this.authService.user?.username || '';
   }
@@ -26,12 +25,10 @@ export class HomeComponent implements OnInit {
   }
 
   startQuiz() {
-    // Show category component using @Input() instead of routing
     this.showCategories = true;
   }
 
   navigateToQuiz() {
-    // Alternative: navigate using route (for backward compatibility)
     this.router.navigate(['/category', this.playerName]);
   }
 
