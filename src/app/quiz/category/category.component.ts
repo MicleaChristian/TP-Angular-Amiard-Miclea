@@ -38,4 +38,8 @@ ngOnInit(): void {
     );
   }
 
+  onReset() {
+    this.searchModel.searchTerm = '';
+    this.filteredCategories = this.quizContent;
+  }
 }

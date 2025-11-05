@@ -11,6 +11,7 @@
           required
         />
         <button type="submit" class="search-button">Search</button>
+        <button type="button" class="reset-button" (click)="onReset()" *ngIf="searchModel.searchTerm.trim()">X</button>
       </div>
     </form>
   </div>
