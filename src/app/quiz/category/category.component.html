@@ -15,8 +15,10 @@
     </form>
   </div>
   
-  <section class="question_container" *ngFor="let content of filteredCategories; let i = index">
-    <h4 class="question_label"><b>category {{ i + 1 }} :</b> {{ content?.name }}</h4>
+  <section class="category_container">
+    <div class="category_card" *ngFor="let content of filteredCategories; let i = index">
+      <h4 class="category_label">{{ content?.name }}</h4>
+    </div>
   </section>
   
   <div *ngIf="filteredCategories.length === 0 && searchModel.searchTerm.trim()" class="no-results">

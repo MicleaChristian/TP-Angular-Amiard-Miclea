@@ -8,7 +8,7 @@ import { QuizService } from "../../shared/services/quiz.service";
   styleUrl: './category.component.scss'
 })
 export class CategoryComponent implements OnInit{
-  
+
   quizContent: any[] = this.quizService.quizContent;
   filteredCategories: any[] = [];
   searchModel = {
@@ -18,7 +18,7 @@ export class CategoryComponent implements OnInit{
   constructor(private readonly quizService: QuizService) { }
 
 ngOnInit(): void {
-    this.quizService.getQuizContent();
+    this.quizService.getQuizCategories();
     this.filteredCategories = this.quizContent;
   }
 

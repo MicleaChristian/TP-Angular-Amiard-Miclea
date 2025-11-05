@@ -1,5 +1,15 @@
+.category {
+    &_container {
+        @apply grid grid-cols-4 gap-4 p-6 w-full;
+    }
+    &_card {
+        @apply bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300;
+    }
+}
 .category-container {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .search-bar-container {
