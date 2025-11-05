@@ -13,8 +13,9 @@ export class CategoryComponent implements OnInit{
   quizContent: any[] = this.quizService.quizContent;
   filteredCategories: any[] = [];
   searchModel = {
-    searchTerm: ''
+  searchTerm: ''
   };
+  playerName = '';
 
   constructor(private quizService: QuizService, private router: Router) { }
 
@@ -39,8 +40,8 @@ ngOnInit(): void {
     );
   }
 
-goToHome() {
-    this.router.navigate(['/']);
+goToQuestions(selectedCategoryId: number) {
+    this.router.navigate(['/quiz', this.playerName, selectedCategoryId]);
     this.quizService.resetQuiz();
  }
 
