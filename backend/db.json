@@ -3,102 +3,102 @@
     {
       "id": 1,
       "questionLabel": "What is a component in Angular?",
-      "category": "Core Concepts"
+      "categoryId": 4
     },
     {
       "id": 2,
       "questionLabel": "Explain the purpose of the NgModule in Angular.",
-      "category": "Routing & Modules"
+      "categoryId": 3
     },
     {
       "id": 3,
       "questionLabel": "How do you create a new Angular application?",
-      "category": "Core Concepts"
+      "categoryId": 4
     },
     {
       "id": 4,
       "questionLabel": "What is data binding in Angular, and what are the different types of data binding?",
-      "category": "Components & Templates"
+      "categoryId": 1
     },
     {
       "id": 5,
       "questionLabel": "Explain the difference between {{}} (interpolation) and [property] (property binding) in Angular templates.",
-      "category": "Components & Templates"
+      "categoryId": 1
     },
     {
       "id": 6,
       "questionLabel": "What is event binding in Angular, and how is it implemented?",
-      "category": "Components & Templates"
+      "categoryId": 1
     },
     {
       "id": 7,
       "questionLabel": "What is Angular CLI, and how do you use it to generate components?",
-      "category": "Core Concepts"
+      "categoryId": 4
     },
     {
       "id": 8,
       "questionLabel": "What is a directive in Angular? Can you name some built-in directives?",
-      "category": "Components & Templates"
+      "categoryId": 1
     },
     {
       "id": 9,
       "questionLabel": "Explain the purpose of the Angular router and how to configure routes in an Angular application.",
-      "category": "Routing & Modules"
+      "categoryId": 3
     },
     {
       "id": 10,
       "questionLabel": "What is dependency injection in Angular, and why is it important?",
-      "category": "Services & Advanced Features"
+      "categoryId": 2
     },
     {
       "id": 11,
       "questionLabel": "How do you communicate between parent and child components in Angular?",
-      "category": "Components & Templates"
+      "categoryId": 1
     },
     {
       "id": 12,
       "questionLabel": "What is a service in Angular, and when should you use it?",
-      "category": "Services & Advanced Features"
+      "categoryId": 2
     },
     {
       "id": 13,
       "questionLabel": "What is the purpose of the ngFor directive in Angular?",
-      "category": "Components & Templates"
+      "categoryId": 1
     },
     {
       "id": 14,
       "questionLabel": "Explain the concept of modules in Angular and their role in organizing an application.",
-      "category": "Routing & Modules"
+      "categoryId": 3
     },
     {
       "id": 15,
       "questionLabel": "What is Angular CLI's ng serve command used for?",
-      "category": "Core Concepts"
+      "categoryId": 4
     },
     {
       "id": 16,
       "questionLabel": "What is Angular's two-way data binding, and how does it work?",
-      "category": "Components & Templates"
+      "categoryId": 1
     },
     {
       "id": 17,
       "questionLabel": "What is Angular's trackBy function, and why is it used with ngFor?",
-      "category": "Components & Templates"
+      "categoryId": 1
     },
     {
       "id": 18,
       "questionLabel": "How can you handle HTTP requests in Angular?",
-      "category": "Services & Advanced Features"
+      "categoryId": 2
     },
     {
       "id": 19,
       "questionLabel": "What are Angular pipes, and can you give some examples of built-in pipes?",
-      "category": "Services & Advanced Features"
+      "categoryId": 2
     },
     {
       "id": 20,
       "questionLabel": "Explain the concept of lazy loading in Angular and when it's beneficial.",
-      "category": "Routing & Modules"
+      "categoryId": 3
     }
   ],
   "answers": [
@@ -186,5 +186,11 @@
   "users": [
     { "id": "1199e", "username": "admin", "password": "admin" },
     { "id": "b99e", "username": "toto", "password": "toto" }
+  ],
+    "categories": [
+    { "id": 1, "name": "Components & Templates" },
+    { "id": 2, "name": "Services & Advanced Features" },
+    { "id": 3, "name": "Routing & Modules" },
+    { "id": 4, "name": "Core Concepts" }
   ]
 }

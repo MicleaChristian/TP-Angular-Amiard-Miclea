@@ -1,0 +1,4 @@
+<p>category works!</p>
+<section class="question_container" *ngFor="let content of quizContent; let i = index">
+  <h4 class="question_label"><b>category {{ i + 1 }} :</b> {{ content?.name }}</h4>
+</section>
