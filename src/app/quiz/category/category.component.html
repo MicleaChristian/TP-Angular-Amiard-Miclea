@@ -1,4 +1,25 @@
-<p>category works!</p>
-<section class="question_container" *ngFor="let content of quizContent; let i = index">
-  <h4 class="question_label"><b>category {{ i + 1 }} :</b> {{ content?.name }}</h4>
-</section>
+<div class="category-container">
+  <div class="search-bar-container">
+    <form #searchForm="ngForm" (ngSubmit)="onSearch(searchForm)">
+      <div class="search-form-group">
+        <input 
+          type="text" 
+          class="search-input" 
+          placeholder="Search categories..." 
+          name="searchTerm"
+          [(ngModel)]="searchModel.searchTerm"
+          required
+        />
+        <button type="submit" class="search-button">Search</button>
+      </div>
+    </form>
+  </div>
+  
+  <section class="question_container" *ngFor="let content of filteredCategories; let i = index">
+    <h4 class="question_label"><b>category {{ i + 1 }} :</b> {{ content?.name }}</h4>
+  </section>
+  
+  <div *ngIf="filteredCategories.length === 0 && searchModel.searchTerm.trim()" class="no-results">
+    <p>No categories found matching "{{ searchModel.searchTerm }}"</p>
+  </div>
+</div>
