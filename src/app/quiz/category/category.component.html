@@ -1,5 +1,5 @@
 <section class="category_container">
-<div class="category_card" *ngFor="let content of quizContent; let i = index">
+<button (click)="goToHome()" class="category_card" *ngFor="let content of quizContent; let i = index">
   <h4 class="category_label">{{ content?.name }}</h4>
-</div>
+</button>
 </section>
